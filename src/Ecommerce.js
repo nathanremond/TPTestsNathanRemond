@@ -36,3 +36,11 @@ function payBasket(userAccount, basket) {
     console.log("Paiement du panier échoué");
   }
 }
+
+module.exports = {
+  Basket,
+  addToBasket,
+  removeFromBasket,
+  transactionAllowed,
+  payBasket,
+};
