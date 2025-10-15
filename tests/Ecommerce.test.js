@@ -29,3 +29,13 @@ test("Test de la fonction TransactionAllowed", () => {
     expect(transactionAllowed(user, 400)).toBe(true);
     expect(transactionAllowed(user, 600)).toBe(false);
 });
+
+test("Test de la fonction payBasket", () => {
+    const user = new UserAccount("John", 500);
+    const basket = new Basket([{ name: "Clavier", price: 300 }], 300);
+    const basket2 = new Basket([{ name: "Souris", price: 600 }], 600);
+    payBasket(user, basket);
+    expect(user.balance).toBe(200);
+    payBasket(user, basket2);
+    expect(user.balance).toBe(200);
+});
