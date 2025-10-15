@@ -6,6 +6,13 @@ class Basket {
   }
 }
 
+class UserAccount {
+  constructor(name, balance = 0) {
+    this.name = name;
+    this.balance = balance;
+  }
+}
+
 function addToBasket(basket, item) {
   basket.items.push(item);
   basket.totalPrice = basket.totalPrice + item.price;
@@ -39,6 +46,7 @@ function payBasket(userAccount, basket) {
 
 module.exports = {
   Basket,
+  UserAccount,
   addToBasket,
   removeFromBasket,
   transactionAllowed,
